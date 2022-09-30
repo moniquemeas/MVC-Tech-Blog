@@ -13,16 +13,27 @@
     <div class=" main-display container">
     <header class="container bg-dark text-white">
         <ul class="navigation-list nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+           {{#if loggedIn}}
+             <li class="nav-item">
+              <button id="logout" class="btn-no-style">Logout</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Dashboard</a>
+              <a class="nav-link" href="/dashboard">Dashboard</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">All Post</a>
+            </li>
+
+            {{else}}
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+            </li>
             
+            {{/if}}
+           
           </ul>
         <div class="title-box mt-3"><h1>The Tech Blog</h1></div>
     </header>
@@ -31,7 +42,8 @@
         {{{body}}}
     </main>
 </div>
-
-    
+{{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>  
+{{/if}}
 </body>
 </html>
