@@ -37,6 +37,7 @@ router.get('/', (req, res) => {
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
+        
       });
   });
 
@@ -87,12 +88,13 @@ router.get('/', (req, res) => {
   });
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/dashboard');
-      return;
-    }
+      res.redirect('/');
+     return;
+   }
   
-    res.render('login');
+   res.render('login');
   });
+ 
   
   router.get('/register', (req, res) =>{
     res.render('register')

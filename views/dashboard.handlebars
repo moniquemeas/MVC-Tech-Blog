@@ -13,7 +13,7 @@
     <button type="submit" class="btn bg-dark text-white mt-3">Create</button>
   </form>
 </section>
-<script src="/javascript/add-post.js"></script>
+
 
 {{#each posts as |post|}}
 <div class="card-body mt-5">
@@ -26,7 +26,14 @@
                 
                 
             <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+
+          <div><a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a></div>
+
+            
+
 </div>
 {{/each}}
+
+<script src="/javascript/add-post.js"></script>
 
 

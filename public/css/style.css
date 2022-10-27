@@ -21,4 +21,8 @@ header{
 .post-title{
     color:bisque;
 }
+#logout{
+   
+    border: 0;
+}
 
