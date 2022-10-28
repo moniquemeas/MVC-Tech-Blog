@@ -9,6 +9,7 @@ async function deleteFormHandler(event) {
     });
   
     if (response.ok) {
+        alert('Your post has been deleted!');
       document.location.replace('/dashboard/');
     } else {
       alert(response.statusText);

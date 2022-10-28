@@ -81,7 +81,8 @@ router.post('/',withAuth, (req, res) => {
 router.put('/:id',withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      description: req.body.description
     },
     {
       where: {
@@ -102,7 +103,8 @@ router.put('/:id',withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
+  console.log(req.params.id)
   Post.destroy({
     where: {
       id: req.params.id
